@@ -1,41 +1,35 @@
 
 an automated ETL pipeline using python ,aws lambda and amazon s3 for csv data cleaning and deduplication
-# AWS Lambda S3 Data Cleaning ETL Project
+# AWS Lambda Data Cleaning Project
 
-## 📌 Project Description
-This project demonstrates a simple serverless ETL (Extract, Transform, Load) data-cleaning pipeline using AWS S3 and AWS Lambda with Python.
+## About the Project
+This is a project I made while learning AWS and Python. In this project, I used AWS S3 and Lambda to clean CSV data automatically.
 
-When a CSV file is uploaded to the `raw/` folder in an Amazon S3 bucket, an AWS Lambda function is automatically triggered. The function validates and cleans the data, removes duplicate records, and saves the cleaned CSV file to the `processed/` folder.
+Whenever a CSV file is uploaded to the raw folder in S3, the Lambda function runs automatically. It removes duplicate records, checks missing values, and saves the cleaned file in the processed folder.
 
-## 🎯 Project Objectives
-- Automate CSV data cleaning.
-- Use AWS S3 to store raw and processed data.
-- Trigger AWS Lambda automatically when a CSV file is uploaded.
-- Validate data and remove duplicate records.
-- Monitor execution using Amazon CloudWatch.
-
-## 🛠️ Technologies Used
+## Services Used
 - AWS S3
 - AWS Lambda
 - Python
-- Boto3
-- Amazon CloudWatch
-- CSV
+- CloudWatch
 
-## ⚙️ How It Works
-1. Upload a CSV file to the `raw/` folder in the S3 bucket.
-2. Amazon S3 triggers the Lambda function automatically.
-3. The Lambda function reads the uploaded CSV file.
-4. It validates required fields and checks numeric values in the amount column.
-5. Records with missing or invalid required data are skipped.
-6. Duplicate records are removed.
-7. The cleaned CSV file is uploaded to the `processed/` folder.
-8. Execution details are logged in Amazon CloudWatch.
+## How It Works
+1. Upload a CSV file to the raw folder.
+2. S3 triggers the Lambda function.
+3. Lambda reads and cleans the data.
+4. Duplicate and invalid records are removed.
+5. The cleaned file is saved in the processed folder.
+6. Logs can be checked in CloudWatch.
 
-## 📂 Project Structure
-```text
-aws-lambda-s3-data-cleaning/
-├── lambda_function.py
-├── sales_test.csv
-├── screenshots/
-└── README.md
+## Files
+- `lambda_function.py` - Python code for data cleaning.
+- `sales_test.csv` - Sample CSV file used for testing.
+- `screenshots` - Screenshots of the project.
+
+## What I Learned
+While making this project, I learned how to use S3, create a Lambda function, configure an S3 trigger, process CSV files using Python, and check logs in CloudWatch.
+
+This project helped me understand the basic working of an automated ETL process using AWS.
+
+## Author
+Student project made for learning AWS and data engineering basics.
